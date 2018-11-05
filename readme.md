@@ -9,14 +9,14 @@ Si ça ne l'est pas déjà fait crééz les dossiers  `src/components` à la rac
 
 La première étape va être de créér notre premier composant. On va l'appeler Header. Il aura le rôle du Header dans notre application et le titre changera dynamiquement.
 Au début de chaque composant on doit importer React et les composants React Native qu'on aura besoin.
-````
+````javascript
 import React from 'react'
 import { View, Text } from 'react-native'
 ```` 
 
 Le composant Header est un composant dit <i>Stateless</i> (lien pour plus d'information). Cet à dire, qu'il n'y aura pas besoin d'hériter de la class mère `Component` de React et qu'il n'y aura pas de gestion d'état.
 
-````
+````javascript
 const Header = props => {
     return (
 
@@ -26,7 +26,7 @@ const Header = props => {
 Les props sont les attributs de notre composant. On peut y passer des object, des methodes...
 Dans le return, on va retourner du JSX, langage à balise de React. C'est inspiré du XML/HTML. On devra toujours wrappé d'un composant parent `<View></View>` par exemple. Ensuite, on peut insérer dedans les composant que l'on a besoin. Ici se sera un composant `<Text></Text>`.
 Puis on applique le style à notre composant Header.
-````
+````javascript
 const styles = {
   containerHeader: {
     alignItems: "center",
@@ -49,7 +49,7 @@ Maintenant rendez-vous dans fichier App.js pour appeler notre nouveau composant.
 
  Voici le code complet de cette étape :   
  Header.js   
-````
+````javascript
 import React from "react"
 import { Text, View, Platform } from "react-native"
 
@@ -75,7 +75,7 @@ export default Header
 ````
 
 App.js
-````
+````javascript
 import React from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import Header from "./src/components/Header"
@@ -96,6 +96,29 @@ const styles = StyleSheet.create({
 })
 
 ````
+Nous avons finit de créer notre premier composant, mais la base React et React Native, c'est des composants réutilisables. Nous allons donc modifier le composant Header afin de le rendre plus générique. Avec React et React Native, on peut passer des propriétés aux composants, on appelle ça des props.
 
-
-
+App.js
+```javascript
+export default class App extends React.Component {
+  render() {
+    return (
+      <SafeAreaView style={styles.container}>
+        <Header title={"My Beer"}/>
+      </SafeAreaView>
+    )
+  }
+}
+```
+Une fois des props passé en paramètre de notre composant, il faut les récupérer. A la déclaration de notre composant Header, nous lui avons passé en paramètre `props`, c'est grâce à lui que nous allons récupérer le paramètre passé précédemment.  
+Header.js
+```javascript
+const Header = props => {
+  return (
+    <View style={styles.containerHeader}>
+      <Text style={styles.textStyle}>{props.title}</Text>
+    </View>
+  )
+}
+```
+Nous avons créer notre premier composant réutilisable. Nous allons passer à la création du composant qui va illustrer notre bière.
