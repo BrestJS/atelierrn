@@ -1,124 +1,36 @@
 # Atelier React Native avec Expo
 
-Le but de cette atelier est de vous faire découvrir l'environnement React Native avec l'outil Expo.
-On va développer une simple application de bière. Ce tuto serait découper en plusieurs branch git. Les instructions et les explications seront mis à jour dans le readme
+Dans cette nouvelle partie, nous allons créer un nouveau composant `BeerDetail`. Ce composant a pour rôle d'afficher une miniature de la bière, un nom et une petite description.
 
-## Création de notre premier composant
-
-Si ça ne l'est pas déjà fait crééz les dossiers  `src/components` à la racine du projet. Tous nos componsants seront insérés dans ce dossier.
-
-La première étape va être de créér notre premier composant. On va l'appeler Header. Il aura le rôle du Header dans notre application et le titre changera dynamiquement.
-Au début de chaque composant on doit importer React et les composants React Native qu'on aura besoin.
-````javascript
-import React from 'react'
-import { View, Text } from 'react-native'
-```` 
-
-Le composant Header est un composant dit <i>Stateless</i> (lien pour plus d'information). Cet à dire, qu'il n'y aura pas besoin d'hériter de la class mère `Component` de React et qu'il n'y aura pas de gestion d'état.
-
-````javascript
-const Header = props => {
-    return (
-
-    )
-}
-````
-Les props sont les attributs de notre composant. On peut y passer des object, des methodes...
-Dans le return, on va retourner du JSX, langage à balise de React. C'est inspiré du XML/HTML. On devra toujours wrappé d'un composant parent `<View></View>` par exemple. Ensuite, on peut insérer dedans les composant que l'on a besoin. Ici se sera un composant `<Text></Text>`.
-Puis on applique le style à notre composant Header.
-````javascript
-const styles = {
-  containerHeader: {
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: "black",
-    height: Platform.OS === "ios" ? 30 : 80
-  },
-  textStyle: {
-    fontSize: 20
-  }
-}
-````
-Le style d'un composant est inséré après notre composant, sous forme d'un objet
-
-Notre composant est donc terminé, il ne reste plus qu'à l'exporter afin de le rendre disponible partout dans notre projet.
-
-Maintenant rendez-vous dans fichier App.js pour appeler notre nouveau composant. `import { Header } from './src/components/Header'`
-
- Remplacer le composant `<Text>` du App.js par notre `<Header />`
-
- Voici le code complet de cette étape :   
- Header.js   
-````javascript
+## Initialisation du composant
+On va donc créer un nouveau composant dans le dossier `src/components/BeerDetail.js`. On a toujours besoin d'importer React et des composants dans React Native. Ici nous allons utiliser View, Text et Image.
+```javascript
 import React from "react"
-import { Text, View, Platform } from "react-native"
+import { Text, View, Image, TouchableOpacity } from "react-native"
 
-const Header = props => {
-  return (
-    <View style={styles.containerHeader}>
-      <Text style={styles.textStyle}>Biere</Text>
+const BeerDetail = props => {
+  return ()
+}
+export default BeerDetail;
+```
+
+## Les images
+L'intégration des images avec React Native peut-être un peu particulière. En effet, celles-ci doit toujours avoir des dimensions spécifier pour s'afficher.
+```javascript
+return (
+    <View>
+      <Image
+        style={{ width: 50, height: 50,rezizeMode:"cover" }}
+        source={{ uri: "https://facebook.github.io/react-native/docs/assets/favicon.png" }}
+      />
+      <Image
+        style={{ width: 66, height: 58 }}
+        source={{
+          uri:
+            "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=="
+        }}
+      />
     </View>
   )
-}
-const styles = {
-  containerHeader: {
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: "black",
-    height: Platform.OS === "ios" ? 30 : 80
-  },
-  textStyle: {
-    fontSize: 20
-  }
-}
-export default Header
-````
-
-App.js
-````javascript
-import React from "react"
-import { StyleSheet, Text, View, SafeAreaView } from "react-native"
-import Header from "./src/components/Header"
-export default class App extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Header />
-      </SafeAreaView>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-})
-
-````
-Nous avons finit de créer notre premier composant, mais la base React et React Native, c'est des composants réutilisables. Nous allons donc modifier le composant Header afin de le rendre plus générique. Avec React et React Native, on peut passer des propriétés aux composants, on appelle ça des props.
-
-App.js
-```javascript
-export default class App extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Header title={"My Beer"}/>
-      </SafeAreaView>
-    )
-  }
-}
 ```
-Une fois des props passé en paramètre de notre composant, il faut les récupérer. A la déclaration de notre composant Header, nous lui avons passé en paramètre `props`, c'est grâce à lui que nous allons récupérer le paramètre passé précédemment.  
-Header.js
-```javascript
-const Header = props => {
-  return (
-    <View style={styles.containerHeader}>
-      <Text style={styles.textStyle}>{props.title}</Text>
-    </View>
-  )
-}
-```
-Nous avons créer notre premier composant réutilisable. Nous allons passer à la création du composant qui va illustrer notre bière.
+
