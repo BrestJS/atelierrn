@@ -2,18 +2,12 @@ import React from "react"
 import { View, Text, Image } from "react-native"
 
 const BeerDetail = props => {
-  const Beers = {
-    id: 1,
-    name: "Buzz",
-    tagline: "A Real Bitter Experience.",
-    first_brewed: "09/2007",
-    description: "A light, crisp and bitter IPA brewed with English and American hops. A small batch brewed only once.",
-    image_url: "https://images.punkapi.com/v2/keg.png"
-  }
+  const { beer } = props
   return (
     <View style={styles.containerDetail}>
-      <Image source={{ uri: Beers.image_url, cache: "only-if-cached" }} style={styles.beerImg} />
-      <Text style={styles.descBeer}>{Beers.description}</Text>
+      <Text style={styles.beerTitle}>{beer.name}</Text>
+      <Image source={{ uri: beer.labels.medium, cache: "only-if-cached" }} style={styles.beerImg} />
+      <Text style={styles.descBeer}>{beer.style.name}</Text>
     </View>
   )
 }
@@ -24,17 +18,18 @@ const styles = {
     justifyContent: "center",
     alignItems: "center"
   },
+  beerTitle: {
+    fontSize: 20
+  },
   beerImg: {
-    width: 500,
-    height: 400,
+    width: 150,
+    height: 150,
     resizeMode: "contain"
   },
   descBeer: {
-    fontSize: 20,
     justifyContent: "center",
     alignItems: "center",
-    width: 300,
-    marginTop: 20
+    marginBottom: 10
   }
 }
 export default BeerDetail

@@ -14,6 +14,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     shadowColor: "black",
+    shadowOpacity: 0.5,
     height: Platform.OS === "ios" ? 30 : 80
   },
   textStyle: {
