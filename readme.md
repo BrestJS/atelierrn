@@ -9,24 +9,24 @@ Si ça ne l'est pas déjà fait crééz les dossiers  `src/components` à la rac
 
 La première étape va être de créér notre premier composant. On va l'appeler Header. Il aura le rôle du Header dans notre application et le titre changera dynamiquement.
 Au début de chaque composant on doit importer React et les composants React Native qu'on aura besoin.
-````
+```javascript
 import React from 'react'
 import { View, Text } from 'react-native'
-```` 
+```
 
 Le composant Header est un composant dit <i>Stateless</i> (lien pour plus d'information). Cet à dire, qu'il n'y aura pas besoin d'hériter de la class mère `Component` de React et qu'il n'y aura pas de gestion d'état.
 
-````
+```jsx
 const Header = props => {
     return (
 
     )
 }
-````
+```
 Les props sont les attributs de notre composant. On peut y passer des object, des methodes...
 Dans le return, on va retourner du JSX, langage à balise de React. C'est inspiré du XML/HTML. On devra toujours wrappé d'un composant parent `<View></View>` par exemple. Ensuite, on peut insérer dedans les composant que l'on a besoin. Ici se sera un composant `<Text></Text>`.
 Puis on applique le style à notre composant Header.
-````
+```javascript
 const styles = {
   containerHeader: {
     alignItems: "center",
@@ -38,7 +38,7 @@ const styles = {
     fontSize: 20
   }
 }
-````
+```
 Le style d'un composant est inséré après notre composant, sous forme d'un objet
 
 Notre composant est donc terminé, il ne reste plus qu'à l'exporter afin de le rendre disponible partout dans notre projet.
@@ -49,7 +49,7 @@ Maintenant rendez-vous dans fichier App.js pour appeler notre nouveau composant.
 
  Voici le code complet de cette étape :   
  Header.js   
-````
+```jsx
 import React from "react"
 import { Text, View, Platform } from "react-native"
 
@@ -72,10 +72,10 @@ const styles = {
   }
 }
 export default Header
-````
+```
 
 App.js
-````
+```jsx
 import React from "react"
 import { StyleSheet, Text, View, SafeAreaView } from "react-native"
 import Header from "./src/components/Header"
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   }
 })
 
-````
+```
 
 
 
