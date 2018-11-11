@@ -7,7 +7,7 @@ const BeerDetail = props => {
     <Card title={beer.name}>
       <View style={styles.containerDetail}>
         <Image source={{ uri: beer.labels.medium }} style={styles.beerImg} />
-        <Text style={{ marginBottom: 10 }}>{beer.style.name}</Text>
+        <Text style={{ marginBottom: 10 }}>{beer.style ? beer.style.name : beer.name}</Text>
       </View>
       <Button
         iconRight={{ name: "edit" }}

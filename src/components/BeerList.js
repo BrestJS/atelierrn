@@ -1,17 +1,35 @@
 import React from "react"
 import { View, FlatList } from "react-native"
 import BeerDetail from "./BeerDetail"
-import Beers from "../../beers.json"
 
-const BeerList = props => {
-  return (
-    <View style={{ flex: 1 }}>
-      <FlatList
-        data={Beers}
-        renderItem={beer => <BeerDetail beer={beer.item} key={beer.index} />}
-        keyExtractor={item => item.id}
-      />
-    </View>
-  )
+class BeerList extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.props = props
+    this.state = { beers: [] }
+
+    fetch("https://sandbox-api.brewerydb.com/v2/beers?hasLabels=y&key=8399b25ee2de305bad151de330671ec1")
+      .then(response => {
+        return response.json()
+      })
+      .then(beers => {
+        this.setState({ beers: beers.data })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+
+  render() {
+    return (
+      <View style={{ flex: 1 }}>
+        <FlatList
+          data={this.state.beers}
+          renderItem={beer => <BeerDetail beer={beer.item} />}
+          keyExtractor={item => item.id}
+        />
+      </View>
+    )
+  }
 }
 export default BeerList
