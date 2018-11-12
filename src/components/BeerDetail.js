@@ -10,10 +10,10 @@ const BeerDetail = props => {
         <Text style={{ marginBottom: 10 }}>{beer.style ? beer.style.name : beer.name}</Text>
       </View>
       <Button
-        iconRight={{ name: "edit" }}
         backgroundColor="#03A9F4"
         buttonStyle={{ borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0 }}
-        title="EDIT"
+        title="MORE"
+        onPress={() => props.navigation.navigate("Beer", { beer: beer })}
       />
     </Card>
   )

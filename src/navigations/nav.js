@@ -2,6 +2,8 @@ import React from "react"
 import { Ionicons } from "@expo/vector-icons"
 import { createBottomTabNavigator, createStackNavigator } from "react-navigation"
 import BeerList from "../components/BeerList"
+import BeerDetail from "../components/BeerDetail"
+import Beer from "../components/Beer"
 
 const DefaultStack = createStackNavigator({
   BeerList: {
@@ -10,6 +12,12 @@ const DefaultStack = createStackNavigator({
       title: "MyBeer",
       headerTextAlign: "center"
     }
+  },
+  Beer: {
+    screen: Beer,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.beer.name.toUpperCase()}`
+    })
   }
 })
 

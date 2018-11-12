@@ -7,7 +7,6 @@ class BeerList extends React.PureComponent {
     super(props)
     this.props = props
     this.state = { beers: [] }
-
     fetch("https://sandbox-api.brewerydb.com/v2/beers?hasLabels=y&key=8399b25ee2de305bad151de330671ec1")
       .then(response => {
         return response.json()
@@ -25,7 +24,7 @@ class BeerList extends React.PureComponent {
       <View style={{ flex: 1 }}>
         <FlatList
           data={this.state.beers}
-          renderItem={beer => <BeerDetail beer={beer.item} />}
+          renderItem={beer => <BeerDetail beer={beer.item} navigation={this.props.navigation} />}
           keyExtractor={item => item.id}
         />
       </View>
