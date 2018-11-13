@@ -3,99 +3,12 @@
 Le but de cette atelier est de vous faire découvrir l'environnement React Native avec l'outil Expo.
 On va développer une simple application de bière. Ce tuto serait découper en plusieurs branch git. Les instructions et les explications seront mis à jour dans le readme
 
-## Création de notre premier composant
+## Getting started
+Pour commencer à travailler, rendez-vous sur la page d'expo <a href="https://expo.io/learn" target="_blank">https://expo.io/learn</a> et suivez les instructions.
 
-Si ça ne l'est pas déjà fait crééz les dossiers  `src/components` à la racine du projet. Tous nos componsants seront insérés dans ce dossier.
+Une fois tout installé, le projet initialisé et l'application qui tourne sur votre smartphone on va pouvoir commencer l'atelier.   
+L'atelier est partionné par branch git `step-n`. Tout est expliqué la démarche à suivre et tout le code source. Assurez-vous que tout fonctionne avant de passez à la step suivante. 
 
-La première étape va être de créér notre premier composant. On va l'appeler Header. Il aura le rôle du Header dans notre application et le titre changera dynamiquement.
-Au début de chaque composant on doit importer React et les composants React Native qu'on aura besoin.
-````
-import React from 'react'
-import { View, Text } from 'react-native'
-```` 
+Si vous avez des questions ou des points d'amélioration n'hésitez pas à les posez en issues. Ce projet est loin d'être à sa version finale, il est à titre éducatif dans le cadre de formation.
 
-Le composant Header est un composant dit <i>Stateless</i> (lien pour plus d'information). Cet à dire, qu'il n'y aura pas besoin d'hériter de la class mère `Component` de React et qu'il n'y aura pas de gestion d'état.
-
-````
-const Header = props => {
-    return (
-
-    )
-}
-````
-Les props sont les attributs de notre composant. On peut y passer des object, des methodes...
-Dans le return, on va retourner du JSX, langage à balise de React. C'est inspiré du XML/HTML. On devra toujours wrappé d'un composant parent `<View></View>` par exemple. Ensuite, on peut insérer dedans les composant que l'on a besoin. Ici se sera un composant `<Text></Text>`.
-Puis on applique le style à notre composant Header.
-````
-const styles = {
-  containerHeader: {
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: "black",
-    height: Platform.OS === "ios" ? 30 : 80
-  },
-  textStyle: {
-    fontSize: 20
-  }
-}
-````
-Le style d'un composant est inséré après notre composant, sous forme d'un objet
-
-Notre composant est donc terminé, il ne reste plus qu'à l'exporter afin de le rendre disponible partout dans notre projet.
-
-Maintenant rendez-vous dans fichier App.js pour appeler notre nouveau composant. `import { Header } from './src/components/Header'`
-
- Remplacer le composant `<Text>` du App.js par notre `<Header />`
-
- Voici le code complet de cette étape :   
- Header.js   
-````
-import React from "react"
-import { Text, View, Platform } from "react-native"
-
-const Header = props => {
-  return (
-    <View style={styles.containerHeader}>
-      <Text style={styles.textStyle}>Biere</Text>
-    </View>
-  )
-}
-const styles = {
-  containerHeader: {
-    alignItems: "center",
-    justifyContent: "center",
-    shadowColor: "black",
-    height: Platform.OS === "ios" ? 30 : 80
-  },
-  textStyle: {
-    fontSize: 20
-  }
-}
-export default Header
-````
-
-App.js
-````
-import React from "react"
-import { StyleSheet, Text, View, SafeAreaView } from "react-native"
-import Header from "./src/components/Header"
-export default class App extends React.Component {
-  render() {
-    return (
-      <SafeAreaView style={styles.container}>
-        <Header />
-      </SafeAreaView>
-    )
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-})
-
-````
-
-
-
+Bon courage et bon apprentissage.
