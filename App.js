@@ -1,12 +1,12 @@
 import React from "react"
 import { StyleSheet, Text, View } from "react-native"
-import Header from "./src/components/Header"
+
 export default class App extends React.Component {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
-        <Header />
-      </SafeAreaView>
+      <View style={styles.container}>
+        <Text>Open you're favorite editor to getting started and edit me in 'my-project/App.js'</Text>
+      </View>
     )
   }
 }
