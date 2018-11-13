@@ -99,4 +99,4 @@ const styles = {
 }
 export default BeerDetail
 ```
-Notre application de bière commence à avoir un peu de contenu mais niveau design elle n'est pas super jolie, c'est pourquoi dans la prochaine partie, on va apprendre comment intégrer un nouveau module à notre projet.
+Notre application de bière commence à avoir un peu de contenu mais niveau design elle n'est pas super jolie, c'est pourquoi dans la prochaine partie, on va apprendre comment intégrer un nouveau module à notre projet. <a href="https://gitlab.com/minicrash/atelierrn/tree/step4">Step4</a>
