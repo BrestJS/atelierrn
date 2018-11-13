@@ -5,7 +5,7 @@ On va développer une simple application de bière. Ce tuto serait découper en 
 
 ## Création de notre premier composant
 
-Si ça ne l'est pas déjà fait crééz les dossiers  `src/components` à la racine du projet. Tous nos componsants seront insérés dans ce dossier.
+Si ça ne l'est pas déjà fait créez les dossiers `src/components` à la racine du projet. Tous nos componsants seront insérés dans ce dossier.
 
 La première étape va être de créér notre premier composant. On va l'appeler Header. Il aura le rôle du Header dans notre application et le titre changera dynamiquement.
 Au début de chaque composant on doit importer React et les composants React Native qu'on aura besoin.
@@ -14,7 +14,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 ```` 
 
-Le composant Header est un composant dit <i>Stateless</i> (lien pour plus d'information). Cet à dire, qu'il n'y aura pas besoin d'hériter de la class mère `Component` de React et qu'il n'y aura pas de gestion d'état.
+Le composant Header est un composant dit <i>Stateless</i> (<a href="https://medium.com/@imletaconnoux/stateful-and-stateless-components-in-react-5da5cedb808f">Stateless vs Stateful</a>). Cet à dire, qu'il n'y aura pas besoin d'hériter de la class mère `Component` de React et qu'il n'y aura pas de gestion d'état.
 
 ````javascript
 const Header = props => {
@@ -121,4 +121,4 @@ const Header = props => {
   )
 }
 ```
-Nous avons créer notre premier composant réutilisable. Nous allons passer à la création du composant qui va illustrer notre bière.
+Nous avons créer notre premier composant réutilisable. Nous allons passer à la création du composant qui va illustrer notre bière. Prochaine étape : <a href="https://gitlab.com/minicrash/atelierrn/tree/step2">Step2</a>
