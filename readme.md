@@ -108,3 +108,4 @@ const BeerDetail = props => {
 ```
 
 Notre application est connecté à une API afin de recevoir des données dynamiquement. Nous avons modifié notre composant `BeerList` afin qu'il puisse changer d'état via le state. Dans la prochaine étape, nous implémenterons la navigation dans l'application.
+<a href="https://gitlab.com/minicrash/atelierrn/tree/step6">Step6</a>
