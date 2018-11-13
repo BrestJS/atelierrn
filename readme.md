@@ -52,8 +52,6 @@ const Beers = {
 }
 ```
 Le but étant d'ajouter l'image et la description. 
-
-
 Vous pourrez trouver le résultat du code complet ci-dessous :
 ```javascript   
 //BeerDetail.js
@@ -98,4 +96,4 @@ const styles = {
 export default BeerDetail
 ```
 Ne pas oublier d'importer le composant BeerDetail dans le App.js afin de le visualiser.  
-Nous avons créer un nouveau composant de base qui va nous servir par la suite à alimenter une liste de bière, c'est l'objet de la prochaine partie.
+Nous avons créer un nouveau composant de base qui va nous servir par la suite à alimenter une liste de bière, c'est l'objet de la prochaine partie. <a href="https://gitlab.com/minicrash/atelierrn/tree/step3">Step3</a>
