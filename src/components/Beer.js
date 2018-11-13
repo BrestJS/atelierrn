@@ -6,7 +6,10 @@ class Beer extends React.Component {
   constructor(props) {
     super(props)
     this.props = props
-    this.state = { beer: this.props.navigation.state.params.beer, isViewMore: false }
+    this.state = {
+      beer: this.props.navigation ? this.props.navigation.state.params.beer : this.props.beer ? this.props.beer : null,
+      isViewMore: false
+    }
     this.viewMoreOrLess = this.viewMoreOrLess.bind(this)
   }
   viewMoreOrLess() {

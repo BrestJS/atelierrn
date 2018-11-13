@@ -1,16 +1,15 @@
 import React from "react"
-import { Ionicons } from "@expo/vector-icons"
-import { createBottomTabNavigator, createStackNavigator } from "react-navigation"
+import { FontAwesome, Ionicons } from "@expo/vector-icons"
+import { createMaterialTopTabNavigator, createStackNavigator, createSwitchNavigator } from "react-navigation"
 import BeerList from "../components/BeerList"
-import BeerDetail from "../components/BeerDetail"
+import RandomBeer from "../components/RandomBeer"
 import Beer from "../components/Beer"
 
 const DefaultStack = createStackNavigator({
   BeerList: {
     screen: BeerList,
     navigationOptions: {
-      title: "MyBeer",
-      headerTextAlign: "center"
+      title: "MyBeer"
     }
   },
   Beer: {
@@ -20,16 +19,41 @@ const DefaultStack = createStackNavigator({
     })
   }
 })
-
-const BottomTabNavigator = createBottomTabNavigator({
-  BeerList: {
-    screen: DefaultStack,
+const TabStack = createStackNavigator({
+  RandomBeer: {
+    screen: RandomBeer,
     navigationOptions: {
-      tabBarLabel: "Bieres",
-      tabBarIcon: ({ tintColor }) => <Ionicons name="md-home" size={32} color={"#03A9F4"} />
+      title: "Discover"
     }
   }
 })
+const BottomTabNavigator = createMaterialTopTabNavigator(
+  {
+    BeerList: {
+      screen: DefaultStack
+    },
+    RandomBeer: {
+      screen: TabStack
+    }
+  },
+  {
+    tabBarPosition: "bottom",
+    scrollEnabled: false,
+    indicatorStyle: {
+      indicatorStyle: {
+        borderBottomColor: "#ffffff",
+        borderBottomWidth: 2
+      }
+    },
+    tabBarOptions: {
+      activeTintColor: "#03A9F4",
+      inactiveTintColor: "#555",
+      style: {
+        backgroundColor: "#FFF"
+      }
+    }
+  }
+)
 const Root = createStackNavigator(
   {
     Tabs: {
