@@ -200,3 +200,4 @@ export default Beer
 Comme j'ai passé en props la navigation dont mon objet Bière que lequel j'ai cliqué. J'ai placé mon objet bière dans mon state. Le State permet de gérer l'état de mon composant et c'est un objet interne à mon composant. Ensuite j'ai décidé de mette en place un système de résumé pour la description de notre bière. 
 
 On a finit pour notre nouveau composant lié à la navigation. On va créer un nouveau composant mais cette fois on va le lier à notre barre de navigation.
+<a href="https://gitlab.com/minicrash/atelierrn/tree/step7">Step7</a>
