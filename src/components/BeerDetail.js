@@ -6,7 +6,7 @@ const BeerDetail = props => {
   return (
     <View style={styles.containerDetail}>
       <Text style={styles.beerTitle}>{beer.name}</Text>
-      <Image source={{ uri: beer.labels.medium, cache: "only-if-cached" }} style={styles.beerImg} />
+      <Image source={{ uri: beer.labels.medium,  }} style={styles.beerImg} />
       <Text style={styles.descBeer}>{beer.style.name}</Text>
     </View>
   )
