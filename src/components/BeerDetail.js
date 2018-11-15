@@ -12,7 +12,7 @@ const BeerDetail = props => {
   }
   return (
     <View style={styles.containerDetail}>
-      <Image source={{ uri: Beers.image_url, cache: "only-if-cached" }} style={styles.beerImg} />
+      <Image source={{ uri: Beers.image_url}} style={styles.beerImg} />
       <Text style={styles.descBeer}>{Beers.description}</Text>
     </View>
   )
