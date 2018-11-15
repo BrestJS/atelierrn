@@ -69,7 +69,7 @@ const BeerDetail = props => {
   }
   return (
     <View style={styles.containerDetail}>
-      <Image source={{ uri: Beers.image_url, cache: "only-if-cached" }} style={styles.beerImg} />
+      <Image source={{ uri: Beers.image_url }} style={styles.beerImg} />
       <Text style={styles.descBeer}>{Beers.description}</Text>
     </View>
   )
@@ -96,4 +96,4 @@ const styles = {
 export default BeerDetail
 ```
 Ne pas oublier d'importer le composant BeerDetail dans le App.js afin de le visualiser.  
-Nous avons créer un nouveau composant de base qui va nous servir par la suite à alimenter une liste de bière, c'est l'objet de la prochaine partie. <a href="https://gitlab.com/minicrash/atelierrn/tree/step3">Step3</a>
+Nous avons créer un nouveau composant de base qui va nous servir par la suite à alimenter une liste de bière, c'est l'objet de la prochaine partie. <a href="https://github.com/BrestJS/atelierrn/tree/step3">Step3</a>
