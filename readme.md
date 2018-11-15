@@ -72,7 +72,7 @@ const BeerDetail = props => {
   return (
     <View style={styles.containerDetail}>
       <Text style={styles.beerTitle}>{beer.name}</Text>
-      <Image source={{ uri: beer.labels.medium, cache: "only-if-cached" }} style={styles.beerImg} />
+      <Image source={{ uri: beer.labels.medium }} style={styles.beerImg} />
       <Text style={styles.descBeer}>{beer.style.name}</Text>
     </View>
   )
@@ -99,4 +99,4 @@ const styles = {
 }
 export default BeerDetail
 ```
-Notre application de bière commence à avoir un peu de contenu mais niveau design elle n'est pas super jolie, c'est pourquoi dans la prochaine partie, on va apprendre comment intégrer un nouveau module à notre projet. <a href="https://gitlab.com/minicrash/atelierrn/tree/step4">Step4</a>
+Notre application de bière commence à avoir un peu de contenu mais niveau design elle n'est pas super jolie, c'est pourquoi dans la prochaine partie, on va apprendre comment intégrer un nouveau module à notre projet. <a href="https://github.com/BrestJS/atelierrn/tree/step4">Step4</a>
