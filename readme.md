@@ -5,7 +5,7 @@ Dans cette nouvelle partie, nous allons mettre un peu de forme avec une librairi
 ## Installation d'une librairie 
 Que ce soit pour React Native Elements ou tout d'autres librairie, il vous faut l'installer avec npm depuis votre terminal dans le répertoire de votre projet.  
 `(atelierrn)$ npm install --save react-native-elements`  
-Une fois installé, redémarrer le projet dans ExpoXDE. Voilà votre librairie est opérationnelle et prête être utilisé.
+Une fois installé, redémarrer le projet depuis le terminal. Voilà votre librairie est opérationnelle et prête être utilisé.
 
 ## Découverte de React-Native-Elements
 ### Le composant Card
