@@ -121,4 +121,4 @@ const Header = props => {
   )
 }
 ```
-Nous avons créer notre premier composant réutilisable. Nous allons passer à la création du composant qui va illustrer notre bière. Prochaine étape : <a href="https://gitlab.com/minicrash/atelierrn/tree/step2">Step2</a>
+Nous avons créer notre premier composant réutilisable. Nous allons passer à la création du composant qui va illustrer notre bière. Prochaine étape : <a href="https://github.com/BrestJS/atelierrn/tree/step2">Step2</a>
