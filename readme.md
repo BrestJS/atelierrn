@@ -43,4 +43,4 @@ Pour donner encore un peu style à notre application, nous allons utiliser le co
 />
 ```
 Dans cet partie, on a implémenté une nouvelle librairie `react-native-elements` qui permet de donner plus de style à notre application et de la développer plus rapidement.
-Dans la prochaine partie nous verrons la partie réseaux afin de faire des requêtes à un service externe. <a href="https://gitlab.com/minicrash/atelierrn/tree/step5">Step5</a>
+Dans la prochaine partie nous verrons la partie réseaux afin de faire des requêtes à un service externe. <a href="https://github.com/BrestJS//atelierrn/tree/step5">Step5</a>
